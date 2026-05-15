@@ -1,17 +1,55 @@
 ---
+import '../styles/global.css';
+import { createMapTilerProvider } from '../lib/MapTilerProvider';
 
+const provider = createMapTilerProvider();
+const styleURL = provider.getStyleURL();
+const attribution = provider.attribution;
 ---
 
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <meta
+      name="description"
+      content="Mapa del estacionamiento medido en Argentina. Consultá dónde y cuándo rige, ciudad por ciudad."
+    />
+    <title>DondeEstacionarGratis — Mapa del estacionamiento medido en Argentina</title>
   </head>
-  <body>
-    <h1>Astro</h1>
+  <body class="m-0 h-screen w-screen overflow-hidden bg-gray-900">
+    <div id="map" class="h-full w-full"></div>
+
+    <script
+      define:vars={{ styleURL, attribution }}
+      type="module"
+    >
+      import maplibregl from 'maplibre-gl';
+
+      const map = new maplibregl.Map({
+        container: 'map',
+        style: styleURL,
+        center: [-63, -38],
+        zoom: 4,
+        attributionControl: false,
+      });
+
+      map.addControl(
+        new maplibregl.AttributionControl({
+          customAttribution: attribution,
+          compact: false,
+        }),
+      );
+
+      map.addControl(new maplibregl.NavigationControl(), 'top-right');
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css"
+    />
   </body>
 </html>
