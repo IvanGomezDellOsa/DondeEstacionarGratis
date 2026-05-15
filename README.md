@@ -35,10 +35,9 @@ Este proyecto cubre ese hueco con un mapa nacional, datos verificados contra ord
 
 ## Cómo está pensado
 
-El proyecto está documentado antes que codeado. Dos archivos cuentan toda la historia:
+El proyecto está documentado antes que codeado. Un archivo cuenta toda la historia:
 
-- [`PLAN.md`](PLAN.md) — visión, principios rectores, pasos de ejecución, definición de "done", riesgos, especificación de producto.
-- [`ADR.md`](ADR.md) — 6 Architecture Decision Records con contexto, alternativas evaluadas, decisión, rationale y consecuencias. Frontend, mapas, scripts, datos, soporte Apple, naming.
+- [`architecture.md`](architecture.md) — visión, principios rectores, pasos de ejecución, especificación de producto y decisiones de arquitectura (ADR).
 
 > Principio rector: *"No hay nada más sofisticado que la sencillez."*
 
