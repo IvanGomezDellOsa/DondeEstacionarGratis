@@ -8,16 +8,16 @@
 
 ## Stack
 
-| Capa | Decisión |
-|---|---|
-| Framework | Astro 4 + TypeScript + Tailwind |
-| Mapa | MapLibre GL + MapTiler tiles |
-| Scripts | Node + TypeScript |
-| Datos | JSON estático por país (`data/cities/ar.json`) |
-| Hosting | Cloudflare Pages |
-| Automatización | GitHub Actions (cron mensual) |
-| Reportes | Formspree → mail directo |
-| Analytics | Ninguno en MVP |
+| Capa           | Decisión                                       |
+| -------------- | ---------------------------------------------- |
+| Framework      | Astro 4 + TypeScript + Tailwind                |
+| Mapa           | MapLibre GL + MapTiler tiles                   |
+| Scripts        | Node + TypeScript                              |
+| Datos          | JSON estático por país (`data/cities/ar.json`) |
+| Hosting        | Cloudflare Pages                               |
+| Automatización | GitHub Actions (cron mensual)                  |
+| Reportes       | Formspree → mail directo                       |
+| Analytics      | Ninguno en MVP                                 |
 
 **Costo recurrente objetivo: $0 USD/mes.**
 
@@ -25,7 +25,7 @@
 
 ## Principios rectores
 
-- **Sencillez como estándar.** Cada feature pasa el test: *"¿se puede sacar sin perder valor?"*.
+- **Sencillez como estándar.** Cada feature pasa el test: _"¿se puede sacar sin perder valor?"_.
 - **El producto funciona con 0 usuarios.** Ninguna feature depende de input externo en tiempo real.
 - **Costo marginal cero.** Toda decisión de infra prioriza free tier sostenible.
 - **El mapa es el héroe.** Visual impecable, área pintada con claridad.
@@ -75,15 +75,15 @@ El stack soporta Safari iOS 14+ nativamente. Tres requisitos en la Definition of
 
 Estos son **deferrals deliberados**, no omisiones. Cada uno tiene un trigger documentado.
 
-| No se hace | Cuándo se haría |
-|---|---|
-| Librería i18n (i18next) | Al sumar el primer idioma adicional |
-| Base de datos real | Al superar 1000 ciudades o 2 MB por país |
-| Tiles self-hosted (Protomaps) | Al 80% del free tier de MapTiler o segundo país |
-| API REST propia | Cuando el frontend necesite queries dinámicas |
-| Service Worker / offline (PWA) | Fase NEXT, no MVP |
-| Capacitor / build iOS | Si se cumplen los triggers de tráfico sostenido |
-| Sistema de cuentas, push, comentarios | Nunca (non-goals explícitos) |
+| No se hace                            | Cuándo se haría                                 |
+| ------------------------------------- | ----------------------------------------------- |
+| Librería i18n (i18next)               | Al sumar el primer idioma adicional             |
+| Base de datos real                    | Al superar 1000 ciudades o 2 MB por país        |
+| Tiles self-hosted (Protomaps)         | Al 80% del free tier de MapTiler o segundo país |
+| API REST propia                       | Cuando el frontend necesite queries dinámicas   |
+| Service Worker / offline (PWA)        | Fase NEXT, no MVP                               |
+| Capacitor / build iOS                 | Si se cumplen los triggers de tráfico sostenido |
+| Sistema de cuentas, push, comentarios | Nunca (non-goals explícitos)                    |
 
 ---
 
@@ -98,13 +98,13 @@ Estos son **deferrals deliberados**, no omisiones. Cada uno tiene un trigger doc
 
 ## Aplicación pragmática de SOLID
 
-| Principio | Aplicación |
-|---|---|
-| Single Responsibility | Tres capas separadas: datos, rendering, pipeline de refresh |
-| Open/Closed | Schema extensible vía `schema_version`; campos por país no rompen código existente |
-| Liskov Substitution | Una "ciudad" AR y una "ciudad" US comparten interfaz; el renderer no distingue |
-| Interface Segregation | El frontend carga solo el país que el usuario mira, no el dataset global |
-| Dependency Inversion | Componentes dependen de interfaces (`TileProvider`, `CityRepository`), no de implementaciones |
+| Principio             | Aplicación                                                                                    |
+| --------------------- | --------------------------------------------------------------------------------------------- |
+| Single Responsibility | Tres capas separadas: datos, rendering, pipeline de refresh                                   |
+| Open/Closed           | Schema extensible vía `schema_version`; campos por país no rompen código existente            |
+| Liskov Substitution   | Una "ciudad" AR y una "ciudad" US comparten interfaz; el renderer no distingue                |
+| Interface Segregation | El frontend carga solo el país que el usuario mira, no el dataset global                      |
+| Dependency Inversion  | Componentes dependen de interfaces (`TileProvider`, `CityRepository`), no de implementaciones |
 
 ---
 

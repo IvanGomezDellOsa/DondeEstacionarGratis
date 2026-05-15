@@ -22,14 +22,14 @@ Este proyecto cubre ese hueco con un mapa nacional, datos verificados contra ord
 
 ## Stack
 
-| Capa | Tecnología | Por qué |
-|---|---|---|
-| Frontend | Astro 4 + TypeScript + Tailwind | Pre-render por ciudad para SEO, islands architecture, free hosting |
-| Mapa | MapLibre GL + MapTiler | Vector tiles, free tier suficiente, sin lock-in (abstracción `TileProvider`) |
-| Datos | JSON por país en repo | Cero infra, versionado por git, schema con códigos ISO 3166 |
-| Hosting | Cloudflare Pages | Edge global, requests ilimitados en free tier |
-| Scripts | Node + TypeScript | Toolchain unificada con el frontend |
-| Automatización | GitHub Actions | Cron mensual de refresh, free tier |
+| Capa           | Tecnología                      | Por qué                                                                      |
+| -------------- | ------------------------------- | ---------------------------------------------------------------------------- |
+| Frontend       | Astro 4 + TypeScript + Tailwind | Pre-render por ciudad para SEO, islands architecture, free hosting           |
+| Mapa           | MapLibre GL + MapTiler          | Vector tiles, free tier suficiente, sin lock-in (abstracción `TileProvider`) |
+| Datos          | JSON por país en repo           | Cero infra, versionado por git, schema con códigos ISO 3166                  |
+| Hosting        | Cloudflare Pages                | Edge global, requests ilimitados en free tier                                |
+| Scripts        | Node + TypeScript               | Toolchain unificada con el frontend                                          |
+| Automatización | GitHub Actions                  | Cron mensual de refresh, free tier                                           |
 
 **Costo mensual esperado: $0.** Único costo: dominio (~$10/año).
 
@@ -39,7 +39,7 @@ El proyecto está documentado antes que codeado. Un archivo cuenta toda la histo
 
 - [`architecture.md`](architecture.md) — visión, principios rectores, pasos de ejecución, especificación de producto y decisiones de arquitectura (ADR).
 
-> Principio rector: *"No hay nada más sofisticado que la sencillez."*
+> Principio rector: _"No hay nada más sofisticado que la sencillez."_
 
 ## Autor
 
@@ -48,4 +48,3 @@ El proyecto está documentado antes que codeado. Un archivo cuenta toda la histo
 - Email: [ivangomezdellosa@gmail.com](mailto:ivangomezdellosa@gmail.com)
 - LinkedIn: [linkedin.com/in/ivangomezdellosa](https://www.linkedin.com/in/ivangomezdellosa/)
 - GitHub: [IvanGomezDellOsa](https://github.com/IvanGomezDellOsa)
-
