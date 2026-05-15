@@ -21,13 +21,20 @@ const attribution = provider.attribution;
     <title>DondeEstacionarGratis — Mapa del estacionamiento medido en Argentina</title>
   </head>
   <body class="m-0 h-screen w-screen overflow-hidden bg-gray-900">
-    <div id="map" class="h-full w-full"></div>
+    <div
+      id="map"
+      class="h-full w-full"
+      data-style-url={styleURL}
+      data-attribution={attribution}
+    ></div>
 
-    <script
-      define:vars={{ styleURL, attribution }}
-      type="module"
-    >
+    <script>
       import maplibregl from 'maplibre-gl';
+      import 'maplibre-gl/dist/maplibre-gl.css';
+
+      const mapEl = document.getElementById('map')!;
+      const styleURL = mapEl.dataset.styleUrl!;
+      const attribution = mapEl.dataset.attribution!;
 
       const map = new maplibregl.Map({
         container: 'map',
@@ -46,10 +53,5 @@ const attribution = provider.attribution;
 
       map.addControl(new maplibregl.NavigationControl(), 'top-right');
     </script>
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css"
-    />
   </body>
 </html>
