@@ -1,6 +1,6 @@
 # DondeEstacionarGratis
 
-> El mapa del estacionamiento medido en Argentina. Estacioná sin multas.
+> Mapa del estacionamiento medido por ciudad, horarios y áreas vigentes.
 
 ![Estado](https://img.shields.io/badge/estado-en%20desarrollo-yellow)
 
